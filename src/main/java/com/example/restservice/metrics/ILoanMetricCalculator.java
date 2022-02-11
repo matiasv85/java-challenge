@@ -18,7 +18,6 @@ public interface ILoanMetricCalculator {
 		return Optional.ofNullable(loan)
 				.filter(l -> StringUtils
 						.equalsIgnoreCase(this.getClass().getAnnotation(Metric.class).value().name, l.getType()))
-				.filter(l -> l.getAnnualInterest() > 0)
 				.isPresent();
 	}
 
